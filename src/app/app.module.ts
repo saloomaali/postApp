@@ -6,17 +6,33 @@ import { AppComponent } from './app.component';
 import { AddComponent } from './add/add.component';
 import { FormsModule } from '@angular/forms';
 import { ViewComponent } from './view/view.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoute : Routes=[
+  {
+    path:"",
+    component:addEventListener
+  },
+  {
+    path:"view",
+    component:ViewComponent
+  }
+]
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
-    ViewComponent
+    ViewComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
